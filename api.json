@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "nombre": "Gaseosa CocaCola 2,5Litros",
+        "precio": "8.00",
+        "imagen":"https://plazavea.vteximg.com.br/arquivos/ids/530008-1000-1000/20016507.jpg"
+    },
+    {
+        "id": "2",
+        "nombre": "Gaseosa IncaKola 500ml",
+        "precio": "1.50",
+        "imagen":"https://wongfood.vteximg.com.br/arquivos/ids/410562-230-230/501573-01-4653.jpg?v=637486884096870000"
+    },
+    {
+        "id": "3",
+        "nombre": "Gaseosa Viva 450ml",
+        "precio": "1.00",
+        "imagen":"https://s.cornershopapp.com/product-images/2054442.jpg?versionId=kxLjv0tyXBWQ7xru0Upj0YzJGr7WdqVq"
+    },
+    {
+        "id": "4",
+        "nombre": "Lays Clásicas 370g",
+        "precio": "1.20",
+        "imagen":"https://plazavea.vteximg.com.br/arquivos/ids/2500263-1000-1000/20198497.jpg?v=637684445843300000"
+    },
+    {
+        "id": "5",
+        "nombre": "Doritos 210g",
+        "precio": "1.50",
+        "imagen":"https://plazavea.vteximg.com.br/arquivos/ids/2500262-1000-1000/20179451.jpg"
+    },
+    {
+        "id": "6",
+        "nombre": "Cheese tris 39g",
+        "precio": "1.00",
+        "imagen":"https://plazavea.vteximg.com.br/arquivos/ids/10256400-1000-1000/20174807.jpg"
+    },
+    {
+        "id": "7",
+        "nombre": "Pezi Duri Chocolate 330ml",
+        "precio": "7.00",
+        "imagen":"https://vegaperu.vtexassets.com/arquivos/ids/158360/7613287023599.jpg?v=637660220817530000"
+    },
+    {
+        "id": "8",
+        "nombre": "Besos de Moza 48g",
+        "precio": "3.00",
+        "imagen":"https://e39a9f00db6c5bc097f9-75bc5dce1d64f93372e7c97ed35869cb.ssl.cf1.rackcdn.com/42123845-LDlDN5bV-large.jpg"
+    }
+]
