@@ -162,6 +162,7 @@ const mostrarFooter = () =>{
 
 }
 
+
 const Comprar = (res) =>{
     return new Promise((resolve,reject)=>{
         document.getElementById('idLoading').style.display ='block';
