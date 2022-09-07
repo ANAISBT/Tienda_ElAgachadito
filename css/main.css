@@ -1,6 +1,6 @@
 body{
     background-color: #eae6e6ea;
-    font-family: 'Roboto', sans-serif;
+     font-family: 'Roboto', sans-serif;
   }
 
 h1{
@@ -62,3 +62,10 @@ h1{
         background-color: black;
         
     }
+.hide{
+    display: none;
+}
+
+.card-text{
+    font-weight: bold;
+}

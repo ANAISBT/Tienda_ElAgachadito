@@ -5,11 +5,22 @@ const templateProductos=document.getElementById('template-productos').content
 const container_productos=document.getElementById('container-productos');
 const templateFooter=document.getElementById('template-footer').content;
 const templateCarrito=document.getElementById('template-carrito').content;
-
 let carrito={}
+
+
+//Bienvenido
+
+const mostrarBienvenido = () =>{
+    const alert = document.querySelector('.alert');
+    setTimeout( function(){
+        alert.classList.add('hide')
+      }, 3000)
+      alert.classList.remove('hide')
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData(); //Funcion para obtener los datos de la API
+    mostrarBienvenido();
 });
 
 const fetchData= async () => {
@@ -77,11 +88,11 @@ const setCarrito = (objeto) =>{
             timer: 1500
         })
     }
+    addLocalStorage();
     mostrarCarrito();
 }
 
 const mostrarCarrito = () =>{
-    // console.log(carrito);
     items.innerHTML='';
     Object.values(carrito).forEach(producto => {
         templateCarrito.querySelector('th').textContent=producto.id;
@@ -96,7 +107,6 @@ const mostrarCarrito = () =>{
         
     });
     items.appendChild(fragment)
-    addLocalStorage();
     mostrarFooter();
 }
 
@@ -108,7 +118,7 @@ function addLocalStorage(){
     const storage = JSON.parse(localStorage.getItem('carrito'));
     if(storage){
       carrito = storage;
-      setCarrito()
+    mostrarCarrito();
     }
   }
 const mostrarFooter = () =>{
@@ -134,23 +144,51 @@ const mostrarFooter = () =>{
             'success'
             )
         carrito={}
+        deleteLocalStorage();
         mostrarCarrito();
         // footer.innerHTML=`<th scope="row" colspan="5">No hay productos en el carrito</th>`;
     })
     const btnComprar=document.getElementById('comprar-carrito');
     btnComprar.addEventListener('click',()=>{
+        Comprar(true);
+        setTimeout(()=>{
+            console.info("Compró",carrito);
+        carrito={}
+        deleteLocalStorage();
+        mostrarCarrito();
+        },3000)
+        // footer.innerHTML=`<th scope="row" colspan="5">No hay productos en el carrito</th>`;
+    })
+
+}
+
+const Comprar = (res) =>{
+    return new Promise((resolve,reject)=>{
+        document.getElementById('idLoading').style.display ='block';
+        setTimeout(()=>{
+            res ? resolve("Compra realizada") : reject("No se pudo realizar la compra")
+        },3000)
+    }).then(()=>{
         Swal.fire(
             'Compra Realizada!',
             'Gracias por su compra',
             'success'
             )
-        console.info("Compró",carrito);
-        carrito={}
-        mostrarCarrito();
-        // footer.innerHTML=`<th scope="row" colspan="5">No hay productos en el carrito</th>`;
+        }).catch(()=>{
+        Swal.fire(
+            'Compra no realizada',
+            'No se pudo realizar la compra',
+            'error'
+            )
+        }).finally(()=>{
+            document.getElementById('idLoading').style.display ='none';
+        console.log("Proceso finalizado");
     })
-
 }
+
+function deleteLocalStorage(){
+    localStorage.clear();
+    }
 
 items.addEventListener('click', evento=>{
     btnCantidad(evento);
@@ -193,3 +231,4 @@ const btnCantidad = evento =>{
 }
 
     
+
